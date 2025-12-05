@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tomorrowland Festival</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      background: url(images/tomorrow2.jpg) no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      z-index: 2;
+      text-shadow: 0 0 20px #ff47ff;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff47ff; }
+      to { text-shadow: 0 0 25px #ff47ff; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 20px;
+      background: #111;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #ffb7ff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #ff47ff;
+      text-shadow: 0 0 10px #ff47ff;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform .4s, box-shadow .4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #ff47ff;
+    }
+
+    .card img {
+      width: 100%; height: 200px; object-fit: cover;
+    }
+
+    .card h3 { margin: 15px 0; color: #ffb7ff; }
+
+    footer {
+      background: #111;
+      padding: 30px;
+      text-align: center;
+      color: #aaa;
+    }
+
+    /* Interactive Button */
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #ff47ff;
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: #ffb7ff;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tomorrowland Festival</h1>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#stages">Stages</a>
+    <a href="#artists">Artists</a>
+    <a href="#tickets">Tickets</a>
+  </nav>
+
+  <section id="about">
+    <h2>✨ Welcome to Tomorrowland ✨</h2>
+    <p>One of the biggest and most magical EDM music festivals on Earth. Experience unity, fantasy, music, and pure vibes.</p>
+    <button class="btn" onclick="showMagic()">Click for Festival Magic ✨</button>
+    <p id="magicText" style="margin-top:15px; font-size:1.2rem; color:#ffb7ff;"></p>
+  </section>
+
+  <section id="stages">
+    <h2>🔥 Iconic Stages</h2>
+    <div class="cards">
+
+      <div class="card">
+        <img src="images/mainstage.jfif">
+        <h3>Mainstage</h3>
+      </div>
+
+      <div class="card">
+        <img src="images/freedom.jpg">
+        <h3>Freedom Stage</h3>
+      </div>
+
+      <div class="card">
+        <img src="images/maddnes.jpg">
+        <h3>Garden of Madness</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="artists">
+    <h2>🎧 Top Artists</h2>
+    <div class="cards">
+
+      <div class="card">
+        <img src="images/martix.jpg">
+        <h3>Martin Garrix</h3>
+      </div>
+
+      <div class="card">
+        <img src="images/armin.jfif">
+        <h3>Armin van Buuren</h3>
+      </div>
+
+      <div class="card">
+        <img src="images/likemike.jpg">
+        <h3>Dimitri Vegas & Like Mike</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tickets">
+    <h2>🎟 Tickets</h2>
+    <p>Limited passes available! Secure your magical Tomorrowland experience.</p>
+    <button class="btn">Book Now</button>
+  </section>
+
+  <footer>
+    © 2025 Tomorrowland • Live Today, Love Tomorrow, Unite Forever
+  </footer>
+
+  <script>
+    function showMagic() {
+      document.getElementById("magicText").innerHTML = "✨ The music never stops. The magic lives within you. ✨";
+    }
+  </script>
+</body>
+</html>

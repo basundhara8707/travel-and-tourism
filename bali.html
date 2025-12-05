@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bali – Island of Gods</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f2f2f2;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: #ffd369; }
+
+    .hero {
+      height: 100vh;
+      background: url(images/bali.jpg) center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      color: #fff;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-content h2 {
+      font-size: 55px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .section {
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 38px;
+      margin-bottom: 40px;
+      color: #2c5364;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .card:hover { transform: translateY(-10px); }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content { padding: 18px; }
+
+    footer {
+      background: #203a43;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h2 { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bali Adventures</h1>
+    <nav>
+      <a href="#places">Places</a>
+      <a href="#culture">Culture</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to Bali</h2>
+      <p>The Island of Gods—filled with beaches, temples, forests, and pure magic.</p>
+    </div>
+  </section>
+
+  <section class="section" id="places">
+    <h2>Top Places to Visit</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/ubud.jpg" />
+        <div class="card-content">Ubud Forest – Home of nature, monkeys, and serenity.</div>
+      </div>
+
+      <div class="card">
+        <img src="images/tanah.jpeg" />
+        <div class="card-content">Tanah Lot Temple – A mesmerizing sea temple.</div>
+      </div>
+
+      <div class="card">
+        <img src="images/nusa.jpg" />
+        <div class="card-content">Nusa Penida – Crystal bays and unreal landscapes.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="culture">
+    <h2>Bali Culture</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/baildance.jfif" />
+        <div class="card-content">Traditional Balinese Dance – Graceful storytelling.</div>
+      </div>
+
+      <div class="card">
+        <img src="images/balifoood.jpg" />
+        <div class="card-content">Balinese Cuisine – Flavors full of spices and love.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h3>Contact Us</h3>
+    <p>Email: explorebali@travel.com</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>© 2025 Bali Adventures</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(e.target.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
